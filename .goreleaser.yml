@@ -4,6 +4,7 @@ builds:
     env:
     - CGO_ENABLED=0
     main: main.go
+    ldflags: '-s -w -X github.com/sensu/sensu-plugins-go-library/version.build={{.Version}} -X github.com/sensu/sensu-plugins-go-library/version.commit={{.Commit}} -X github.com/sensu/sensu-plugins-go-library/version.date={{.Date}}'
     # Set the binary output location to bin/ so archive will comply with Sensu Go Asset structure
     binary: bin/{{ .ProjectName }}
     goos:
