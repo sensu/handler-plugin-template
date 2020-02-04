@@ -6,7 +6,6 @@ builds:
     main: main.go
     # Set the binary output location to bin/ so archive will comply with Sensu Go Asset structure
     binary: bin/{{ .ProjectName }}
-    name_template: "{{ .ProjectName }}-{{ .Tag }}"
     goos:
       - darwin
       - freebsd
@@ -31,6 +30,7 @@ checksum:
 archives:
   - id: tar
     format: tar.gz
+    name_template: "{{ .ProjectName }}_{{ .Tag }}_{{ .Os }}_{{ .Arch }}{{ if .Arm }}v{{ .Arm }}{{ end }}"
     files:
       - LICENSE
       - README.md
