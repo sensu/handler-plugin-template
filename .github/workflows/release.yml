@@ -25,8 +25,8 @@ jobs:
       - name: Replace github user & project in go.mod
         run: $(go env GOPATH)/bin/go-cli-template --GithubUser=sensu-community --GithubProject=handler-plugin-template go.mod > go.mod.tmp
         shell: bash
-      - name: Move go.mod.tmp -> go.mod
-        run: mv go.mod.tmp go.mod
+      - name: Remove go.mod and move go.mod.tmp -> go.mod
+        run: rm go.mod && mv go.mod.tmp go.mod
       - name: Run GoReleaser
         uses: goreleaser/goreleaser-action@v1
         with:
