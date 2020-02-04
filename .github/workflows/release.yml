@@ -5,28 +5,18 @@ on:
     tags:
       - '*'
 
-env:
-  GO111MODULE: on
-
 jobs:
   goreleaser:
     runs-on: ubuntu-latest
     steps:
-      - name: Set up Go
-        uses: actions/setup-go@v1
-        with:
-          go-version: 1.13.x
-      - name: Install go-cli-template
-        run: go get github.com/dreadatour/go-cli-template@5a0e7bdae4be76b88d9f30f4e849f6915f0b4ed0
       - name: Checkout code
         uses: actions/checkout@v2
       - name: Unshallow
         run: git fetch --prune --unshallow
-      - name: Replace github user & project in go.mod
-        run: $(go env GOPATH)/bin/go-cli-template --GithubUser=sensu-community --GithubProject=handler-plugin-template go.mod > go.mod.tmp
-        shell: bash
-      - name: Remove go.mod and move go.mod.tmp -> go.mod
-        run: rm go.mod && mv go.mod.tmp go.mod
+      - name: Set up Go
+        uses: actions/setup-go@v1
+        with:
+          go-version: 1.13.x
       - name: Run GoReleaser
         uses: goreleaser/goreleaser-action@v1
         with:

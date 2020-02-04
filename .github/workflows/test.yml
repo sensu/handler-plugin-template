@@ -2,9 +2,6 @@ name: Go Test
 
 on: [push]
 
-env:
-  GO111MODULE: on
-
 jobs:
   test:
     name: Test
@@ -13,19 +10,12 @@ jobs:
       matrix:
         os: [macos-latest, windows-latest, ubuntu-latest]
     steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
     - name: Set up Go 1.13
       uses: actions/setup-go@v1
       with:
         go-version: 1.13
       id: go
-    - name: Install go-cli-template
-      run: go get github.com/dreadatour/go-cli-template@5a0e7bdae4be76b88d9f30f4e849f6915f0b4ed0
-    - name: Checkout code
-      uses: actions/checkout@v2
-    - name: Replace github user & project in go.mod
-      run: $(go env GOPATH)/bin/go-cli-template --GithubUser=sensu-community --GithubProject=handler-plugin-template go.mod > go.mod.tmp
-      shell: bash
-    - name: Move go.mod.tmp -> go.mod
-      run: mv go.mod.tmp go.mod
     - name: Test
       run: go test -v ./...
