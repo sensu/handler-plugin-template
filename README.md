@@ -1,1 +1,1 @@
-# example-handler-plugin
+# {{ .Name }}

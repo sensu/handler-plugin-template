@@ -1,3 +1,3 @@
-module github.com/sensu-community/handler-plugin-template
+module github.com/{{ .GithubUser }}/{{ .GithubProject }}
 
 go 1.13
