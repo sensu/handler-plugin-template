@@ -23,6 +23,8 @@ jobs:
     - name: Checkout code
       uses: actions/checkout@v2
     - name: Replace github user & project in go.mod
-      run: $(go env GOPATH)/bin/go-cli-template --GithubUser=sensu-community --GithubProject=handler-plugin-template go.mod > go.mod
+      run: $(go env GOPATH)/bin/go-cli-template --GithubUser=sensu-community --GithubProject=handler-plugin-template go.mod > go.mod.tmp
+    - name: Move go.mod.tmp -> go.mod
+      run: mv go.mod.tmp go.mod
     - name: Test
       run: go test -v ./...
