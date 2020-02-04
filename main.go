@@ -2,6 +2,10 @@ package main
 
 import (
 	"fmt"
+	"log"
+
+	"github.com/sensu-community/sensu-plugin-sdk/sensu"
+	"github.com/sensu/sensu-go/types"
 )
 
 type HandlerConfig struct {
@@ -46,7 +50,7 @@ func main() {
 }
 
 func checkArgs(_ *types.Event) error {
-	if len(handlerConfig.Example == 0) {
+	if len(handlerConfig.Example) == 0 {
 		return fmt.Errorf("--example or HANDLER_EXAMPLE environment variable is required")
 	}
 	return nil
@@ -54,4 +58,5 @@ func checkArgs(_ *types.Event) error {
 
 func executeHandler(event *types.Event) error {
 	log.Println("executing handler with --example", handlerConfig.Example)
+	return nil
 }
