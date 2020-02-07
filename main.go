@@ -20,10 +20,10 @@ type ConfigOptions struct {
 var (
 	handlerConfig = HandlerConfig{
 		PluginConfig: sensu.PluginConfig{
-			Name:     "{{ .Name }}",
+			Name:     "{{ .GithubProject }}",
 			Short:    "{{ .Description }}",
 			Timeout:  10,
-			Keyspace: "sensu.io/plugins/{{ .Name }}/config",
+			Keyspace: "sensu.io/plugins/{{ .GithubProject }}/config",
 		},
 	}
 
