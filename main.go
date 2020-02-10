@@ -8,39 +8,31 @@ import (
 	"github.com/sensu/sensu-go/types"
 )
 
-type HandlerConfig struct {
+// Config represents the handler plugin config.
+type Config struct {
 	sensu.PluginConfig
 	Example string
 }
 
-type ConfigOptions struct {
-	Example sensu.PluginConfigOption
-}
-
 var (
-	handlerConfig = HandlerConfig{
+	plugin = Config{
 		PluginConfig: sensu.PluginConfig{
 			Name:     "{{ .GithubProject }}",
 			Short:    "{{ .Description }}",
-			Timeout:  10,
 			Keyspace: "sensu.io/plugins/{{ .GithubProject }}/config",
 		},
 	}
 
-	handlerConfigOptions = ConfigOptions{
-		Example: sensu.PluginConfigOption{
+	options := []*sensu.PluginConfigOption{
+		&sensu.PluginConfigOption{
 			Path:      "example",
 			Env:       "HANDLER_EXAMPLE",
 			Argument:  "example",
 			Shorthand: "e",
 			Default:   "",
-			Usage:     "An example configuration option",
-			Value:     &handlerConfig.Example,
+			Usage:     "An example string configuration option",
+			Value:     &plugin.Example,
 		},
-	}
-
-	options = []*sensu.PluginConfigOption{
-		&handlerConfigOptions.Example,
 	}
 )
 
