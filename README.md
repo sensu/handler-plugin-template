@@ -95,7 +95,7 @@ go build -o /usr/local/bin/{{ .GithubProject }} main.go
 For more information about contributing to this plugin, see [Contributing][1].
 
 [1]: https://github.com/sensu/sensu-go/blob/master/CONTRIBUTING.md
-[2]: github.com/sensu-community/sensu-plugin-sdk
+[2]: https://github.com/sensu-community/sensu-plugin-sdk
 [3]: https://github.com/sensu-plugins/community/blob/master/PLUGIN_STYLEGUIDE.md
 [4]: https://github.com/sensu-community/handler-plugin-template/blob/master/.github/workflows/release.yml
 [5]: https://github.com/sensu-community/handler-plugin-template/actions
