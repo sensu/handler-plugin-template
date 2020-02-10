@@ -50,9 +50,9 @@ The {{ .Name }} is a [Sensu Handler][6] that ...
 
 ### Asset registration
 
-Assets are the best way to make use of this plugin. If you're not using an asset, please consider
-doing so! If you're using sensuctl 5.13 with Sensu Backend 5.13 or later, you can use the following
-command to add the asset:
+[Sensu Assets][10] are the best way to make use of this plugin. If you're not using an asset, please
+consider doing so! If you're using sensuctl 5.13 with Sensu Backend 5.13 or later, you can use the
+following command to add the asset:
 
 ```
 sensuctl asset add {{ .GithubUser }}/{{ .GithubProject }}
@@ -103,3 +103,4 @@ For more information about contributing to this plugin, see [Contributing][1].
 [7]: https://github.com/sensu-community/handler-plugin-template/blob/master/main.go
 [8]: https://bonsai.sensu.io/
 [9]: https://github.com/sensu-community/sensu-plugin-tool
+[10]: https://docs.sensu.io/sensu-go/latest/reference/assets/
