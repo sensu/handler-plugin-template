@@ -85,7 +85,7 @@ or create an executable script from this source.
 From the local path of the {{ .GithubProject }} repository:
 
 ```
-go build -o /usr/local/bin/{{ .GithubProject }} main.go
+go build
 ```
 
 ## Additional notes
