@@ -23,7 +23,7 @@ var (
 		},
 	}
 
-	options := []*sensu.PluginConfigOption{
+	options = []*sensu.PluginConfigOption{
 		&sensu.PluginConfigOption{
 			Path:      "example",
 			Env:       "HANDLER_EXAMPLE",
@@ -37,18 +37,18 @@ var (
 )
 
 func main() {
-	handler := sensu.NewGoHandler(&handlerConfig.PluginConfig, options, checkArgs, executeHandler)
+	handler := sensu.NewGoHandler(&plugin.PluginConfig, options, checkArgs, executeHandler)
 	handler.Execute()
 }
 
 func checkArgs(_ *types.Event) error {
-	if len(handlerConfig.Example) == 0 {
+	if len(plugin.Example) == 0 {
 		return fmt.Errorf("--example or HANDLER_EXAMPLE environment variable is required")
 	}
 	return nil
 }
 
 func executeHandler(event *types.Event) error {
-	log.Println("executing handler with --example", handlerConfig.Example)
+	log.Println("executing handler with --example", plugin.Example)
 	return nil
 }
