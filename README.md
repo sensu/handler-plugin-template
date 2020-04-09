@@ -1,3 +1,5 @@
+{{- /* Ignore this text, until templating is ran via [sensu-plugin-tool](https://github.com/sensu-community/sensu-plugin-tool) the below badge links wiill not render */ -}}
+
 [![Sensu Bonsai Asset](https://img.shields.io/badge/Bonsai-Download%20Me-brightgreen.svg?colorB=89C967&logo=sensu)](https://bonsai.sensu.io/assets/{{ .GithubUser }}/{{ .Name }})
 ![Go Test](https://github.com/{{ .GithubUser }}/{{ .Name }}/workflows/Go%20Test/badge.svg)
 ![goreleaser](https://github.com/{{ .GithubUser }}/{{ .Name }}/workflows/goreleaser/badge.svg)
