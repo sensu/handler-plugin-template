@@ -79,7 +79,7 @@ spec:
   command: {{ .GithubProject }} --example example_arg
   type: pipe
   runtime_assets:
-  - {{ .GithubProject }}
+  - {{ .GithubUser}}/{{ .GithubProject }}
 ```
 
 ## Installation from source
