@@ -40,6 +40,7 @@ the plugin with goreleaser. Register the asset with [Bonsai][8] to share it with
 - [Configuration](#configuration)
   - [Asset registration](#asset-registration)
   - [Handler definition](#handler-definition)
+  - [Annotations](#annotations)
 - [Installation from source](#installation-from-source)
 - [Additional notes](#additional-notes)
 - [Contributing](#contributing)
@@ -80,6 +81,24 @@ spec:
   type: pipe
   runtime_assets:
   - {{ .GithubUser}}/{{ .GithubProject }}
+```
+
+### Annotations
+
+All arguments for this handler are tunable on a per entity or check basis based on annotations.  The
+annotations keyspace for this handler is `sensu.io/plugins/{{ .GithubProject }}/config`.
+
+#### Examples
+
+To change the example argument for a particular check, for that checks's metadata add the following:
+
+```yml
+type: CheckConfig
+api_version: core/v2
+metadata:
+  annotations:
+    sensu.io/plugins/{{ .GithubProject }}/config/example-argument: "Example change"
+[...]
 ```
 
 ## Installation from source
