@@ -83,6 +83,13 @@ spec:
   - {{ .GithubUser}}/{{ .GithubProject }}
 ```
 
+#### Proxy Support
+
+This handler supports the use of the environment variables HTTP_PROXY,
+HTTPS_PROXY, and NO_PROXY (or the lowercase versions thereof). HTTPS_PROXY takes
+precedence over HTTP_PROXY for https requests.  The environment values may be
+either a complete URL or a "host[:port]", in which case the "http" scheme is assumed.
+
 ### Annotations
 
 All arguments for this handler are tunable on a per entity or check basis based on annotations.  The
