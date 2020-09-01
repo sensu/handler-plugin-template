@@ -1,8 +1,9 @@
 {{- /* Ignore this text, until templating is ran via [sensu-plugin-tool](https://github.com/sensu-community/sensu-plugin-tool) the below badge links wiill not render */ -}}
 
 [![Sensu Bonsai Asset](https://img.shields.io/badge/Bonsai-Download%20Me-brightgreen.svg?colorB=89C967&logo=sensu)](https://bonsai.sensu.io/assets/{{ .GithubUser }}/{{ .GithubProject }})
-![Go Test](https://github.com/{{ .GithubUser }}/{{ .GithubProject }}/workflows/Go%20Test/badge.svg)
 ![goreleaser](https://github.com/{{ .GithubUser }}/{{ .GithubProject }}/workflows/goreleaser/badge.svg)
+[![Go Test](https://github.com/{{ .GithubUser }}/{{ .GithubProject }}/workflows/Go%20Test/badge.svg)](https://github.com/{{ .GithubUser }}/{{ .GithubProject }}/actions?query=workflow%3A%22Go+Test%22)
+[![goreleaser](https://github.com/{{ .GithubUser }}/{{ .GithubProject }}/workflows/goreleaser/badge.svg)](https://github.com/{{ .GithubUser }}/{{ .GithubProject }}/actions?query=workflow%3Agoreleaser)
 
 # Handler Plugin Template
 
