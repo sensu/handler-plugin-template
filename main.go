@@ -4,8 +4,8 @@ import (
 	"fmt"
 	"log"
 
-	"github.com/sensu-community/sensu-plugin-sdk/sensu"
 	"github.com/sensu/sensu-go/types"
+	"github.com/sensu/sensu-plugin-sdk/sensu"
 )
 
 // Config represents the handler plugin config.
