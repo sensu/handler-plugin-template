@@ -5,7 +5,7 @@ import (
 	"log"
 
 	"github.com/sensu-community/sensu-plugin-sdk/sensu"
-	"github.com/sensu/sensu-go/types"
+	"github.com/sensu/sensu-go/api/core/v2"
 )
 
 // Config represents the handler plugin config.
@@ -41,7 +41,7 @@ func main() {
 	handler.Execute()
 }
 
-func checkArgs(_ *types.Event) error {
+func checkArgs(_ *v2.Event) error {
 	if len(plugin.Example) == 0 {
 		return fmt.Errorf("--example or HANDLER_EXAMPLE environment variable is required")
 	}
