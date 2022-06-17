@@ -1,4 +1,4 @@
-{{- /* Ignore this text, until templating is ran via [sensu-plugin-tool](https://github.com/sensu-community/sensu-plugin-tool) the below badge links wiill not render */ -}}
+{{- /* Ignore this text, until templating is ran via [sensu-plugin-tool](https://github.com/sensu/sensu-plugin-tool) the below badge links wiill not render */ -}}
 
 [![Sensu Bonsai Asset](https://img.shields.io/badge/Bonsai-Download%20Me-brightgreen.svg?colorB=89C967&logo=sensu)](https://bonsai.sensu.io/assets/{{ .GithubUser }}/{{ .GithubProject }})
 ![goreleaser](https://github.com/{{ .GithubUser }}/{{ .GithubProject }}/workflows/goreleaser/badge.svg)
@@ -128,12 +128,12 @@ go build
 For more information about contributing to this plugin, see [Contributing][1].
 
 [1]: https://github.com/sensu/sensu-go/blob/master/CONTRIBUTING.md
-[2]: https://github.com/sensu-community/sensu-plugin-sdk
+[2]: https://github.com/sensu/sensu-plugin-sdk
 [3]: https://github.com/sensu-plugins/community/blob/master/PLUGIN_STYLEGUIDE.md
-[4]: https://github.com/sensu-community/handler-plugin-template/blob/master/.github/workflows/release.yml
-[5]: https://github.com/sensu-community/handler-plugin-template/actions
+[4]: https://github.com/sensu/handler-plugin-template/blob/master/.github/workflows/release.yml
+[5]: https://github.com/sensu/handler-plugin-template/actions
 [6]: https://docs.sensu.io/sensu-go/latest/reference/handlers/
-[7]: https://github.com/sensu-community/handler-plugin-template/blob/master/main.go
+[7]: https://github.com/sensu/handler-plugin-template/blob/master/main.go
 [8]: https://bonsai.sensu.io/
-[9]: https://github.com/sensu-community/sensu-plugin-tool
+[9]: https://github.com/sensu/sensu-plugin-tool
 [10]: https://docs.sensu.io/sensu-go/latest/reference/assets/
