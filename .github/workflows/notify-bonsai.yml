@@ -1,0 +1,30 @@
+name: Bonsai
+
+##
+# Only run this workflow after goreleaser complets
+##
+on:
+  workflow_run:
+    workflows: 
+      - goreleaser
+    types:
+      - completed
+
+jobs:
+  ##
+  # Note: 
+  # The Bonsai GitHub webhook integration looks for a GitHub webhook payload matching a worflow_job named: `bonsai-recompile` with status: `completed` 
+  # To enable automatic Bonsai recompiles after building a new release in github make sure webhook_jobs events are enabled for 
+  # the Bonsai GitHub webhook installed in GitHub repository by Bonsai as part of the asset repository resgistration process
+  ##
+  bonsai-recompile:
+    ##
+    # Only run this workflow_job after goreleaser completes successfully
+    ##
+    runs-on: ubuntu-latest
+    if: ${{ github.event.workflow_run.conclusion == 'success' }}
+    steps:
+      - name: bonsai-webhook
+        continue-on-error: true
+        run: echo "Trigger recompile on 'completed' workflow_job event matching workflow_job.name 'bonsai-recompile' and workflow.name 'bonsai'"
+
