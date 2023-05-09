@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"log"
 
-	corev2 "github.com/sensu/sensu-go/api/core/v2"
+	"github.com/sensu/sensu-go/types"
 	"github.com/sensu/sensu-plugin-sdk/sensu"
 )
 
@@ -41,14 +41,14 @@ func main() {
 	handler.Execute()
 }
 
-func checkArgs(event *corev2.Event) error {
+func checkArgs(_ *types.Event) error {
 	if len(plugin.Example) == 0 {
 		return fmt.Errorf("--example or HANDLER_EXAMPLE environment variable is required")
 	}
 	return nil
 }
 
-func executeHandler(event *corev2.Event) error {
-	log.Println("executing handler with --example", plugin.Example)
+func executeHandler(event *types.Event) error {
+	log.Printf("executing handler with --example", plugin.Example)
 	return nil
 }
